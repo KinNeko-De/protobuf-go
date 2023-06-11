@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package protobuf_go.encoding.testing.proto.v2;
+
+option go_package = "protobuf-go/encoding/testing/proto/v2";
+
+message SingleString {
+    optional string fut = 1;
+}
+
+message MultipleStrings {
+    optional string name = 1;
+    optional string street = 2;
+}

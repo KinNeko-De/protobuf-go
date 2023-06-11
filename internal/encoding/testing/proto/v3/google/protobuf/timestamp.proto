@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package protobuf_go.encoding.testing.proto.v3.google.protobuf;
+
+option go_package = "protobuf-go/encoding/testing/proto/v3/google/protobuf";
+
+message SingleTimestamp {
+    .google.protobuf.Timestamp fut = 1;
+}
+
+message MultipleTimestamp {
+    .google.protobuf.Timestamp one = 1;
+    .google.protobuf.Timestamp two = 2;
+}
