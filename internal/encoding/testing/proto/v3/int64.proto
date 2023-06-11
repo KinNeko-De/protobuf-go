@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package protobuf_go.encoding.testing.proto.v3;
+
+option go_package = "protobuf-go/encoding/testing/proto/v3";
+
+message SingleInt64 {
+    int64 fut = 1;
+}
+
+message MultipleInt64 {
+    int64 one = 1;
+    int64 two = 2;
+}

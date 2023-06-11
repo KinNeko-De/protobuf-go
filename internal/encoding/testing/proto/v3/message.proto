@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package protobuf_go.encoding.testing.proto.v3;
+
+option go_package = "protobuf-go/encoding/testing/proto/v3";
+
+message SingleMessage {
+    SubMessage fut = 1;
+}
+
+message MultipleMessage {
+    SubMessage one = 1;
+    repeated SubSubMessage two = 2;
+}
+
+message SubMessage {
+    string sone = 1;
+    SubSubMessage stwo = 2;
+}
+
+message SubSubMessage {
+    string ssfut = 1;
+}

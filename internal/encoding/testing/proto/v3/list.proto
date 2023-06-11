@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package protobuf_go.encoding.testing.proto.v3;
+
+option go_package = "protobuf-go/encoding/testing/proto/v3";
+
+message SingleListInt {
+    repeated int32 fut = 1;
+}
+
+message MultipleList {
+    repeated string one = 1;
+    repeated int32 two = 2;
+}
