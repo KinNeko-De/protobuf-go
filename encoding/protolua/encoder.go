@@ -210,7 +210,7 @@ func appendString(out []byte, in string) ([]byte, error) {
 			case '\f':
 				return out, errors.New("not implemented yet")
 			case '\n': // replaced with a latex line break that needs to be escaped
-				out = append(out, "\\\\newline"...)
+				out = append(out, "\\\\\\\\newline"...)
 			case '\r':
 				// do nothing as \r\n and \n are reduced to line break
 			case '\t':
