@@ -229,14 +229,14 @@ func TestMarshal_Positive(t *testing.T) {
 			input: &v3proto.SingleString{
 				Fut: "\n",
 			},
-			expected: "SingleString={fut=\"\\\\\\\\newline\"}",
+			expected: "SingleString={fut=\" \\\\newline \"}",
 		},
 		{
 			desc: "Message with special character carriage return and line feed",
 			input: &v3proto.SingleString{
 				Fut: "\r\n",
 			},
-			expected: "SingleString={fut=\"\\\\\\\\newline\"}",
+			expected: "SingleString={fut=\" \\\\newline \"}",
 		},
 		{
 			desc: "Message with special character \\",
