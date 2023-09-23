@@ -3,7 +3,7 @@ on:
 
 env:
     MAJOR_MINOR_PATCH: 0.2.0
-    FEATURE_BRANCH_BUILD: 3
+    FEATURE_BRANCH_BUILD: 1
 
 concurrency: release-${{ github.ref }}
 
