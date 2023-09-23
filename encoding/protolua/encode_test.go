@@ -229,14 +229,14 @@ func TestMarshal_Positive(t *testing.T) {
 			input: &v3proto.SingleString{
 				Fut: "\n",
 			},
-			expected: "SingleString={fut=\"\\\\\\\\\"}",
+			expected: "SingleString={fut=\"\\\\newline\"}",
 		},
 		{
 			desc: "Message with special character carriage return and line feed",
 			input: &v3proto.SingleString{
 				Fut: "\r\n",
 			},
-			expected: "SingleString={fut=\"\\\\\\\\\"}",
+			expected: "SingleString={fut=\"\\\\newline\"}",
 		},
 		{
 			desc: "Message with special character \\",
@@ -362,7 +362,7 @@ func TestMarshal_GoogleProtobuf_CanBeOverridden(t *testing.T) {
 
 	actual, err := LuaMarshalOption{AdditionalMarshalers: []interface {
 		Handle(fullName protoreflect.FullName) (MarshalFunc, error)
-	}{ &TestOverrider{}}}.marshal(message)
+	}{&TestOverrider{}}}.marshal(message)
 
 	AssertLuaString(actual, err, expected, t)
 }
@@ -387,8 +387,8 @@ func (TestOverrider) Handle(fullName protoreflect.FullName) (MarshalFunc, error)
 
 	convertTimestamp := func(encodingRun EncodingRun, m protoreflect.Message) error {
 		err := encodingRun.Encoder.WriteString("FortyTwo")
-		if(err != nil) {
-			return err;
+		if err != nil {
+			return err
 		}
 		return nil
 	}
@@ -403,4 +403,3 @@ func (TestOverrider) Handle(fullName protoreflect.FullName) (MarshalFunc, error)
 	}
 	return nil, nil
 }
-
